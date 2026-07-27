@@ -1,0 +1,11 @@
+# Core — training and inference
+torch>=2.5
+torchvision>=0.20
+numpy>=2.0
+pillow>=11.0
+
+# Notebook and no-reference quality metrics only
+matplotlib>=3.10
+pyiqa>=0.1.13
+jupyter>=1.1
+ipykernel>=6.29
