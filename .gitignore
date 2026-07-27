@@ -7,3 +7,6 @@ __pycache__/
 venv/
 checkpoints/
 data/
+
+# personal notes, not for publication
+interview.md
