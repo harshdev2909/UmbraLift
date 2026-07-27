@@ -184,13 +184,18 @@ and displays a before/after pair.
 
 ## Results
 
-Measured on the PSR test set (lower is better):
+No-reference quality on the PSR test set (lower is better):
 
 | Method | Input | Zero-DCE | Zero-DCE++ | ZSPL-PSR | RRDNet | RetinexDIP | UmbraLift |
 |---------|--------|-----------|------------|-----------|---------|------------|----------------|
 | PIQE↓ | 54.06 | 51.11 | 51.59 | 47.51 | 52.55 | 52.61 | **36.40** |
 | NIQE↓ | 12.07 | 9.67 | 9.75 | 9.29 | 10.01 | 9.80 | **8.38** |
 | BRISQUE↓ | 56.87 | 45.58 | 46.42 | 54.91 | 43.16 | 43.11 | **36.55** |
+
+The UmbraLift column reproduces from this repository: run `metrics.ipynb`
+against the PSR test set with the shipped checkpoint. The baseline columns are
+carried over from the original evaluation of this method — those models are not
+included here, so their figures cannot be regenerated from this repository.
 
 ![Model Comparisons](diagrams/model-comparisions.png)
 <p align="center"><i>Comparison of enhancement methods on PSR images.</i></p>
@@ -210,6 +215,19 @@ snapshots/model-best.pth      trained checkpoint (323 KB)
 diagrams/                     architecture and comparison figures
 ```
 
+## Credits
+
+The network architecture, loss formulation and trained checkpoint originate
+from prior work by Ashish Prajapati and collaborators, released under the MIT
+license. This repository builds on that: device-agnostic training and
+inference, a corrected data pipeline, and the tooling and documentation around
+it.
+
+The [training dataset](https://www.kaggle.com/datasets/ashishprajapati1306/illumicurvenet-training-data/)
+is published by the original authors.
+
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT — see [LICENSE](LICENSE). Copyright is held jointly by the original author
+and subsequent contributors; the MIT terms require the original notice be kept
+in any copy.
